@@ -1,0 +1,30 @@
+{
+  "name": "grand-webimp-starter",
+  "version": "0.0.1",
+  "description": "this is starter pack for basic graphql server setup using GRAND STACK",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "express",
+    "apollo",
+    "neo4j",
+    "subscription"
+  ],
+  "author": "webimp",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-engine": "1.1.0",
+    "apollo-server-module-graphiql": "1.3.4",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "graphql-server-express": "^1.4.0",
+    "graphql-tools": "^4.0.4",
+    "neo4j-driver": "^1.7.2"
+  }
+}
