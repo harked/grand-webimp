@@ -8,19 +8,21 @@ const wrapper = require('./resolvers/index')
 
 // Queries 
 const getAllUsers = wrapper.getAllUsers
+const getUserById = wrapper.getUserById
 
 // Mutations 
 const createUser = wrapper.createUser
+const createUserCustomScalar = wrapper.createUserCustomScalar
 
 const schemaDefinition = `
     type Query {
-        # user 
-        getAllUsers: listUsers!
+        getAllUsers: listUsers! # get all data users
+        getUserById(id: Int): singleUser # get data user by id (params)
     }
 
     type Mutation{
-        # user 
-        createUser(id: Int, name: String!): singleUser!
+        createUser(id: Int, name: String!): singleUser! # create new user base on id and name
+        createUserCustomScalar(input: userScalar): singleUser # create new user using custom scalar (params)
     }
 
     schema {
@@ -36,10 +38,12 @@ module.exports = gqlTools.makeExecutableSchema({
     ],
     resolvers: {
         Query: {
-            getAllUsers
+            getAllUsers,
+            getUserById
         },
         Mutation: {
-            createUser
+            createUser,
+            createUserCustomScalar
         }
     }
 })
